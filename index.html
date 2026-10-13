@@ -25,8 +25,39 @@
   <img src="IMG-20261012-WA0001-removebg-preview.png"  alt="Logo Titus The Programmer">
 </center>
     <h2> Filosofi Logo</h2>
-    <p> </p>
     
+
+<div class="language-switch">
+  <button onclick="changeLanguage('id')">🇮🇩 ID</button>
+  <button onclick="changeLanguage('en')">🇬🇧 EN</button>
+</div>
+
+<h2 id="title">Titus the Programmer</h2>
+<p id="philosophy">
+  Nama Titus berasal dari plesetan nama Titut
+  yang dipadukan dengan sebutan the Programmer.
+</p>
+    <br> Kelinci melambangkan rasa ingin tahu dan keberanian mencoba hal baru. Laptop menjadi simbol teknologi, sementara bunga dan kilauan menggambarkan ide-ide yang terus bermekaran.
+    <br> Seperti taman ajaib, Titus merepresentasikan kami sebagai programmer muda yang kreatif, mau belajar dari kesalahan, dan pantang menyerah. Sebab, coding bukan sekadar menulis kode, tetapi juga menanam ide dan membiarkan kreativitas terus berkembang.
+
+<script>
+  function changeLanguage(lang) {
+    const title = document.getElementById("title");
+    const text = document.getElementById("philosophy");
+
+    if (lang === "en") {
+      title.textContent = "Titus the Programmer";
+      text.textContent =
+        "The name Titus comes from a playful twist on Titut, paired with the title the Programmer.";
+    } else {
+      title.textContent = "Titus the Programmer";
+      text.textContent =
+        "Nama Titus berasal dari plesetan nama Titut yang dipadukan dengan sebutan the Programmer.";
+    }
+  }
+</script>
+
+
     
     <script src="./script.js"></script>
   </body>
