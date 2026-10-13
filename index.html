@@ -24,40 +24,91 @@
     <center>
   <img src="IMG-20261012-WA0001-removebg-preview.png"  alt="Logo Titus The Programmer">
 </center>
-    <h2> Filosofi Logo</h2>
     
+<h2>Filosofi Logo</h2>
+
+<style>
+  .language-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 10px 0 20px;
+  }
+
+  .language-switch button {
+    padding: 8px 14px;
+    border: 1px solid #b58b55;
+    border-radius: 20px;
+    background: #fff8e8;
+    color: #684b35;
+    cursor: pointer;
+  }
+
+  .language-switch button.active {
+    background: #b58b55;
+    color: white;
+  }
+
+  #philosophy {
+    line-height: 1.7;
+  }
+</style>
 
 <div class="language-switch">
-  <button onclick="changeLanguage('id')">🇮🇩 ID</button>
-  <button onclick="changeLanguage('en')">🇬🇧 EN</button>
+  <button id="btn-id" class="active"
+    onclick="changeLanguage('id')">🇮🇩 ID</button>
+
+  <button id="btn-en"
+    onclick="changeLanguage('en')">🇬🇧 EN</button>
 </div>
 
-<h2 id="title">Titus the Programmer</h2>
-<p id="philosophy">
-  Nama Titus berasal dari plesetan nama Titut
-  yang dipadukan dengan sebutan the Programmer.
-</p>
-  <p>Kelinci melambangkan rasa ingin tahu dan keberanian mencoba hal baru. Laptop menjadi simbol teknologi, sementara bunga dan kilauan menggambarkan ide-ide yang terus bermekaran.</p> 
-    <p> Seperti taman ajaib, Titus merepresentasikan kami sebagai programmer muda yang kreatif, mau belajar dari kesalahan, dan pantang menyerah. Sebab, coding bukan sekadar menulis kode,</p>
-      <p>tetapi juga menanam ide dan membiarkan kreativitas terus berkembang.</p>
+<h3 id="philosophy-title">Titus the Programmer</h3>
+
+<div id="philosophy">
+  <p id="p1"></p>
+  <p id="p2"></p>
+  <p id="p3"></p>
+</div>
 
 <script>
-  function changeLanguage(lang) {
-    const title = document.getElementById("title");
-    const text = document.getElementById("philosophy");
+  const philosophy = {
+    id: [
+      "Nama Titus berasal dari plesetan nama Titut yang dipadukan dengan sebutan the Programmer, sesuai dengan tema website kami.",
 
-    if (lang === "en") {
-      title.textContent = "Titus the Programmer";
-      text.textContent =
-        "The name Titus comes from a playful twist on Titut, paired with the title the Programmer. 
-        The bunny symbolizes curiosity and the courage to try new things. The laptop represents technology, while the flowers and sparkles reflect ideas that continue to bloom.
-Like an enchanted garden, Titus represents us as young programmers who are creative, willing to learn from mistakes, and determined to keep going. Coding is not just about writing code, but also about planting ideas and letting creativity grow.";
-    } else {
-      title.textContent = "Titus the Programmer";
-      text.textContent =
-        "Nama Titus berasal dari plesetan nama Titut yang dipadukan dengan sebutan the Programmer.";
-    }
+      "Kelinci melambangkan rasa ingin tahu dan keberanian mencoba hal baru. Laptop menjadi simbol teknologi, sementara bunga dan kilauan menggambarkan ide-ide yang terus bermekaran.",
+
+      "Seperti taman ajaib, Titus merepresentasikan kami sebagai programmer muda yang kreatif, mau belajar dari kesalahan, dan pantang menyerah. Coding bukan sekadar menulis kode, tetapi juga menanam ide dan membiarkan kreativitas terus berkembang. 🌷"
+    ],
+
+    en: [
+      "The name Titus comes from a playful twist on Titut, paired with the title the Programmer to match our website's theme.",
+
+      "The bunny symbolizes curiosity and the courage to try new things. The laptop represents technology, while the flowers and sparkles reflect ideas that continue to bloom.",
+
+      "Like an enchanted garden, Titus represents us as young programmers who are creative, willing to learn from mistakes, and determined not to give up. Coding is not just about writing code, but also about planting ideas and letting creativity grow. 🌷"
+    ]
+  };
+
+  function changeLanguage(lang) {
+    document.getElementById("p1").textContent =
+      philosophy[lang][0];
+
+    document.getElementById("p2").textContent =
+      philosophy[lang][1];
+
+    document.getElementById("p3").textContent =
+      philosophy[lang][2];
+
+    document.getElementById("btn-id").classList.toggle(
+      "active", lang === "id"
+    );
+
+    document.getElementById("btn-en").classList.toggle(
+      "active", lang === "en"
+    );
   }
+
+  changeLanguage("id");
 </script>
 
 
