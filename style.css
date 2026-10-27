@@ -6,3 +6,5 @@ html {
 ul { list-style-type:none;}
 li {display:inline;
     padding:10px;}
+      h1 {text-align: center; color:#DA1884}
+      body {background-color:#89CFF0;border:5px solid black;border-radius:18px;border-style: dashed}
