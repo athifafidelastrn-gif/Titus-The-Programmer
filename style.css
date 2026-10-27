@@ -9,3 +9,17 @@ li {display:inline;
       h1 {text-align: center; color:#DA1884}
       body {background-color:#89CFF0;border:5px solid black;border-radius:18px}
 p.dashed {border-style: dashed}
+  body {
+
+      font-family: Arial, sans-serif;
+
+      text-align: center;
+
+      padding-top: 100px;
+
+      background: #fffaf5;
+
+    }
+#musicButton { background: #e8cfc4; color: #49352e;  border: none; padding: 12px 24px;border-radius: 25px;font-size: 16px;cursor: pointer;}
+
+    #musicButton:hover { background: #d9b8aa;}
