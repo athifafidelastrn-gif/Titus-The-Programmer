@@ -9,15 +9,38 @@ li {display:inline;
       h1 {text-align: center; color:#DA1884}
       body {background-color:#F7E7CE;border:5px solid black;border-radius:18px}
 p.dashed {border-style: dashed}
-  body {font-family: Arial, sans-serif;
+  
 
-      text-align: center;
+#musicBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 74px;
+  height: 74px;
+  border: none;
+  border-radius: 50%;
+  background: #08c5f5;
+  color: #073344;
+  font-size: 38px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(8, 197, 245, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-      padding-top: 100px;
+#musicBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px rgba(8, 197, 245, 0.6);
+}
 
-      background: #fffaf5;
+#musicBtn.playing #musicIcon {
+  animation: musicPulse 1s infinite alternate;
+}
 
-    }
-#musicButton { background: #e8cfc4; color: #49352e;  border: none; padding: 12px 24px;border-radius: 25px;font-size: 16px;cursor: pointer;}
-
-    #musicButton:hover { background: #d9b8aa;}
+@keyframes musicPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
